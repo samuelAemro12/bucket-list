@@ -17,16 +17,20 @@ public class BucketList {
     }
 }
 
-class Travel {
-    String name;
-    int age;
-
     Travel() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter your name: ");
         this.name = sc.nextLine();
+
         System.out.print("Enter your age: ");
-        this.age = sc.nextInt();
+        while (true) {
+            try {
+                this.age = Integer.parseInt(sc.nextLine());
+                if (age > 0) break;
+                else System.out.print("Please enter a valid age: ");
+            } catch (NumberFormatException e) {
+                System.out.print("Invalid input. Please enter a number: ");
+            }
+        }
     }
 
     public void visit() {
