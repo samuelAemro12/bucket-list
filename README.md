@@ -26,12 +26,11 @@ Ensure you have **Java Development Kit (JDK)** installed.
 
 ```bash
 javac BucketList.java
+```
 Run the application:
-
-bash
-Copy
-Edit
+``` bash 
 java bucketlist.BucketList
+```
 Follow the on-screen prompts and enjoy your journey-building experience.
 
 Project Structure
@@ -41,20 +40,20 @@ Travel	Handles user input and generates travel-related goals.
 Become	Abstract base class defining fundamental life goals.
 Display	Extends Become to implement personal and generational aspirations.
 Hunt	Extends Display to include professional and career-specific objectives.
-🔮 Future Enhancements
-💾 Add persistent storage to save and reload user data.
 
-🖥️ Introduce a graphical user interface (GUI) version.
+Future Enhancements
+Add persistent storage to save and reload user data.
 
-🏃 Expand goal categories (e.g., fitness, hobbies, relationships).
+ Introduce a graphical user interface (GUI) version.
 
-🌐 Support for multiple users and session management.
+Expand goal categories (e.g., fitness, hobbies, relationships).
 
-📄 License
+Support for multiple users and session management.
+
+License
 This project is open-source and free to use or modify for educational purposes. Attribution is appreciated but not required.
 
-📬 Contact
-For questions, suggestions, or feedback, feel free to reach out at:
-[your-email@example.com]
+Author 
+Samuel Aemro Melese - samuelaemrowork12@gmail.com
 
 "Your bucket list is not just a list — it's a map to the life you want to live."
