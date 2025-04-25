@@ -4,98 +4,103 @@ import java.util.*;
 
 public class BucketList {
     public static void main(String[] args) {
-        System.out.println("Welcome to the Bucket List");
-        System.out.println("Enter your name");
+        System.out.println("Welcome to the Bucket List ");
 
         Travel travel = new Travel();
+        travel.captureUserDetails();
         travel.showTravelPlans();
 
         Display display = new Display();
-        display.goalsForFather();
-        display.goalsForSelf();
-        display.familyLeadershipGoals();
+        display.forFather();
+        display.forThySelf();
+        display.rule();
 
         Hunt hunt = new Hunt();
-        hunt.careerLeadershipGoals();
+        hunt.rule();
     }
 }
 
 class Travel {
-
-    private int age;
     private String name;
+    private int age;
 
     private static final String MSG_VISIT = "Visit Old Trafford";
     private static final String MSG_TREK = "Go Trekking on Mount Ras Dejen";
     private static final String MSG_PILGRIMAGE = "Go on Pilgrimage to Lalibela";
-    private static final String MSG_LIVE_FULL = "Live your life to the fullest, age is just a number!";
+    private static final String MSG_LIVE_FULL = "Live Life to the Fullest";
 
-
-    Travel() {
+    public void captureUserDetails() {
         Scanner sc = new Scanner(System.in);
-        this.name = sc.nextLine();
 
-        System.out.println("Enter your age:");
-        this.age = getValidAge(sc);
-    }
+        System.out.print("Enter your name: ");
+        this.name = sc.nextLine().trim();
 
-    private int getValidAge(Scanner sc) {
-        int inputAge = sc.nextInt();
-        while (inputAge <= 0) {
-            System.out.println("Please enter a valid age:");
-            inputAge = sc.nextInt();
+        while (true) {
+            System.out.print("Enter your age: ");
+            try {
+                this.age = Integer.parseInt(sc.nextLine().trim());
+                if (age > 0) break;
+                else System.out.println("Age must be positive.");
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter a valid number.");
+            }
         }
-        return inputAge;
     }
 
-public void showTravelPlans() {
-    System.out.println("======= THIS IS " + name + "'s BUCKET LIST =======");
+    public void showTravelPlans() {
+        System.out.println("======= THIS IS " + name + "'s BUCKET LIST =======");
 
-    List<String> travelPlans = new ArrayList<>();
+        List<String> travelPlans = new ArrayList<>();
 
-    if (age < 30) {
-        travelPlans.add(MSG_VISIT);
-        travelPlans.add(MSG_TREK);
-    } else if (age <= 45) {
-        travelPlans.add(MSG_PILGRIMAGE);
-    } else {
-        travelPlans.add(MSG_LIVE_FULL);
+        if (age < 30) {
+            travelPlans.add(MSG_VISIT);
+            travelPlans.add(MSG_TREK);
+        } else if (age <= 45) {
+            travelPlans.add(MSG_PILGRIMAGE);
+        } else {
+            travelPlans.add(MSG_LIVE_FULL);
+        }
+
+        for (int i = 0; i < travelPlans.size(); i++) {
+            System.out.println((i + 1) + ". " + travelPlans.get(i));
+        }
     }
-
-    for (int i = 0; i < travelPlans.size(); i++) {
-        System.out.println((i + 1) + ". " + travelPlans.get(i));
-    }
-}
-
 }
 
 abstract class Become {
-    String character = "HONOURABLE";
+    protected String character = "HONOURABLE";
 
-    public abstract void goalsForFather();
-    public abstract void goalsForSelf();
+    public abstract void forFather();
+    public abstract void forThySelf();
 }
 
 class Display extends Become {
-    public void goalsForFather() {
-        System.out.println("Make Father Truly Proud");
+    @Override
+    public void forFather() {
+        System.out.println("\n For Father:");
+        System.out.println("- Make Father Truly Proud");
     }
 
-    public void goalsForSelf() {
-        System.out.println("Find My Passion");
-        System.out.println("Excel at My Field");
-        System.out.println("Finish My TO-READ LIST");
-        System.out.println("Coach a Football Team");
+    @Override
+    public void forThySelf() {
+        System.out.println("\n For Thyself:");
+        System.out.println("- Find My Passion");
+        System.out.println("- Excel at My Field");
+        System.out.println("- Finish My TO-READ LIST");
+        System.out.println("- Coach a Football Team");
     }
 
-    public void familyLeadershipGoals() {
-        System.out.println("Rule my Life");
-        System.out.println("Guide my Children as per the Laws of the Lord");
+    public void rule() {
+        System.out.println("\n Life Philosophy:");
+        System.out.println("- Rule my Life");
+        System.out.println("- Raise Children by the Laws of the Lord");
     }
 }
 
 class Hunt extends Display {
-    public void careerLeadershipGoals() {
-        System.out.println("Lead the Career World");
+    @Override
+    public void rule() {
+        System.out.println("\n Career Aspirations:");
+        System.out.println("- Dominate in the Career World");
     }
 }
