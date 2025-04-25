@@ -57,3 +57,21 @@ class Display extends Become {
         System.out.println("- Coach a football team");
     }
 }
+
+class Display extends Become {
+    public void forFather() {
+        System.out.println("- Make Father Truly Proud");
+    }
+
+    public void forThySelf() {
+        System.out.println("- Find My Passion");
+        System.out.println("- Excel at my Field");
+        System.out.println("- Finish My TO-READ LIST");
+        System.out.println("- Coach a football team");
+    }
+
+    public void rule() {
+        System.out.println("- Rule my Life");
+        System.out.println("- Rule my Children as the Laws of the Lord dictates");
+    }
+}
