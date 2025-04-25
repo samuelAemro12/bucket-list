@@ -10,6 +10,7 @@ public class BucketList {
         Display display = new Display();
         display.forFather();
         display.forThySelf();
+        display.rule();
     }
 }
 
