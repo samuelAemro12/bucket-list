@@ -8,15 +8,15 @@ public class BucketList {
         System.out.println("Enter your name");
 
         Travel travel = new Travel();
-        travel.visit();
+        travel.showTravelPlans();
 
         Display display = new Display();
-        display.forFather();
-        display.forThySelf();
-        display.rule();
+        display.goalsForFather();
+        display.goalsForSelf();
+        display.familyLeadershipGoals();
 
         Hunt hunt = new Hunt();
-        hunt.rule();
+        hunt.careerLeadershipGoals();
     }
 }
 
@@ -27,6 +27,7 @@ class Travel {
     Travel() {
         Scanner sc = new Scanner(System.in);
         this.name = sc.nextLine();
+
         System.out.println("Enter your age:");
         this.age = getValidAge(sc);
     }
@@ -40,14 +41,14 @@ class Travel {
         return inputAge;
     }
 
-    public void visit() {
+    public void showTravelPlans() {
         System.out.println("======= THIS IS " + name + "'s BUCKET LIST =======");
 
-        if (age > 0 && age < 30) {
+        if (age < 30) {
             System.out.println("Visit Old Trafford");
-            System.out.println("Go Treking on Mount Ras Dejen");
-        } else if (age >= 30 && age <= 45) {
-            System.out.println("Go on Pilgrimage to Lalibella");
+            System.out.println("Go Trekking on Mount Ras Dejen");
+        } else if (age <= 45) {
+            System.out.println("Go on Pilgrimage to Lalibela");
         } else {
             System.out.println("Live your life to the fullest, age is just a number!");
         }
@@ -56,30 +57,31 @@ class Travel {
 
 abstract class Become {
     String character = "HONOURABLE";
-    public abstract void forFather();
-    public abstract void forThySelf();
+
+    public abstract void goalsForFather();
+    public abstract void goalsForSelf();
 }
 
 class Display extends Become {
-    public void forFather() {
+    public void goalsForFather() {
         System.out.println("Make Father Truly Proud");
     }
 
-    public void forThySelf() {
+    public void goalsForSelf() {
         System.out.println("Find My Passion");
-        System.out.println("Excel at my Field");
+        System.out.println("Excel at My Field");
         System.out.println("Finish My TO-READ LIST");
-        System.out.println("Coach a football team");
+        System.out.println("Coach a Football Team");
     }
 
-    public void rule() {
+    public void familyLeadershipGoals() {
         System.out.println("Rule my Life");
-        System.out.println("Rule my Children as the Laws of the Lord dictate");
+        System.out.println("Guide my Children as per the Laws of the Lord");
     }
 }
 
 class Hunt extends Display {
-    public void rule() {
-        System.out.println("Rule The Career World");
+    public void careerLeadershipGoals() {
+        System.out.println("Lead the Career World");
     }
 }
