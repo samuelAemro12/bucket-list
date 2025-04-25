@@ -6,6 +6,10 @@ public class BucketList {
 
         Travel travel = new Travel();
         travel.visit();
+
+        Display display = new Display();
+        display.forFather();
+        display.forThySelf();
     }
 }
 
@@ -33,5 +37,23 @@ class Travel {
         } else {
             System.out.println("- Reflect and travel the world with wisdom.");
         }
+    }
+}
+
+abstract class Become {
+    abstract public void forFather();
+    abstract public void forThySelf();
+}
+
+class Display extends Become {
+    public void forFather() {
+        System.out.println("- Make Father Truly Proud");
+    }
+
+    public void forThySelf() {
+        System.out.println("- Find My Passion");
+        System.out.println("- Excel at my Field");
+        System.out.println("- Finish My TO-READ LIST");
+        System.out.println("- Coach a football team");
     }
 }
