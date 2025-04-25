@@ -11,6 +11,9 @@ public class BucketList {
         display.forFather();
         display.forThySelf();
         display.rule();
+        Hunt hunt = new Hunt();
+        hunt.rule();
+
     }
 }
 
