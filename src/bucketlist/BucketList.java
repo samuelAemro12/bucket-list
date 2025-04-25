@@ -21,8 +21,15 @@ public class BucketList {
 }
 
 class Travel {
+
     private int age;
     private String name;
+
+    private static final String MSG_VISIT = "Visit Old Trafford";
+    private static final String MSG_TREK = "Go Trekking on Mount Ras Dejen";
+    private static final String MSG_PILGRIMAGE = "Go on Pilgrimage to Lalibela";
+    private static final String MSG_LIVE_FULL = "Live your life to the fullest, age is just a number!";
+
 
     Travel() {
         Scanner sc = new Scanner(System.in);
@@ -45,12 +52,12 @@ class Travel {
         System.out.println("======= THIS IS " + name + "'s BUCKET LIST =======");
 
         if (age < 30) {
-            System.out.println("Visit Old Trafford");
-            System.out.println("Go Trekking on Mount Ras Dejen");
+            System.out.println(MSG_VISIT);
+            System.out.println(MSG_TREK);
         } else if (age <= 45) {
-            System.out.println("Go on Pilgrimage to Lalibela");
+            System.out.println(MSG_PILGRIMAGE);
         } else {
-            System.out.println("Live your life to the fullest, age is just a number!");
+            System.out.println(MSG_LIVE_FULL);
         }
     }
 }
