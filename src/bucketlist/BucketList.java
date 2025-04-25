@@ -48,18 +48,25 @@ class Travel {
         return inputAge;
     }
 
-    public void showTravelPlans() {
-        System.out.println("======= THIS IS " + name + "'s BUCKET LIST =======");
+public void showTravelPlans() {
+    System.out.println("======= THIS IS " + name + "'s BUCKET LIST =======");
 
-        if (age < 30) {
-            System.out.println(MSG_VISIT);
-            System.out.println(MSG_TREK);
-        } else if (age <= 45) {
-            System.out.println(MSG_PILGRIMAGE);
-        } else {
-            System.out.println(MSG_LIVE_FULL);
-        }
+    List<String> travelPlans = new ArrayList<>();
+
+    if (age < 30) {
+        travelPlans.add(MSG_VISIT);
+        travelPlans.add(MSG_TREK);
+    } else if (age <= 45) {
+        travelPlans.add(MSG_PILGRIMAGE);
+    } else {
+        travelPlans.add(MSG_LIVE_FULL);
     }
+
+    for (String plan : travelPlans) {
+        System.out.println(plan);
+    }
+}
+
 }
 
 abstract class Become {
