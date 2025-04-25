@@ -62,8 +62,8 @@ public void showTravelPlans() {
         travelPlans.add(MSG_LIVE_FULL);
     }
 
-    for (String plan : travelPlans) {
-        System.out.println(plan);
+    for (int i = 0; i < travelPlans.size(); i++) {
+        System.out.println((i + 1) + ". " + travelPlans.get(i));
     }
 }
 
