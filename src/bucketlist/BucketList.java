@@ -76,3 +76,9 @@ class Display extends Become {
         System.out.println("- Rule my Children as the Laws of the Lord dictates");
     }
 }
+class Hunt extends Display {
+    @Override
+    public void rule() {
+        System.out.println("- Rule The Career World");
+    }
+}
