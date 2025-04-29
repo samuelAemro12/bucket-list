@@ -1,4 +1,3 @@
-```markdown
 # Bucket List App
 
 The **Bucket List** application is a refined Java console program designed to generate personalized bucket lists based on user input. It leverages core object-oriented programming principles such as **abstraction**, **inheritance**, and **encapsulation** to deliver an interactive and motivational experience.
